@@ -8,6 +8,6 @@ Bundler.require(*Rails.groups)
 
 module QsAssignment
   class Application < Rails::Application
-    config.eager_load_paths << Rails.root.join('lib')
+    config.eager_load_paths += %W(#{config.root}/lib)
   end
 end

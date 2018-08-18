@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113072621) do
+ActiveRecord::Schema.define(version: 20180818180259) do
 
   create_table "facilities", force: :cascade do |t|
     t.string   "user"
@@ -18,6 +18,27 @@ ActiveRecord::Schema.define(version: 20171113072621) do
     t.string   "site"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "insurances", force: :cascade do |t|
+    t.integer  "facility_id"
+    t.string   "type_id"
+    t.string   "type_desc"
+    t.integer  "d_coverage_amount"
+    t.integer  "d_coverage_percentage"
+    t.integer  "d_monthly_fee"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["facility_id"], name: "index_insurances_on_facility_id"
+    t.index ["type_id"], name: "index_insurances_on_type_id"
+  end
+
+  create_table "units", force: :cascade do |t|
+    t.integer  "facility_id"
+    t.string   "name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["facility_id"], name: "index_units_on_facility_id"
   end
 
 end

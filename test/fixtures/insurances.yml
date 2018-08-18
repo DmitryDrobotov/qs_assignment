@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  facility: one
+  type_id: MyString
+  type_desc: MyString
+  d_coverage_amount: 1
+  d_coverage_percentage: 1
+  d_monthly_fee: 1
+
+two:
+  facility: two
+  type_id: MyString
+  type_desc: MyString
+  d_coverage_amount: 1
+  d_coverage_percentage: 1
+  d_monthly_fee: 1
